@@ -1,0 +1,28 @@
+{
+  "name": "countries-and-capitals",
+  "version": "1.0.0",
+  "description": "angular project using animations, promises and XHR Requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yolixtly/countries-and-capitals.git"
+  },
+  "author": "Yolixtly Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yolixtly/countries-and-capitals/issues"
+  },
+  "homepage": "https://github.com/yolixtly/countries-and-capitals#readme",
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0",
+    "gulp-less": "^3.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.8"
+  }
+}
