@@ -1,5 +1,5 @@
-var app = angular.module('CoCaApp', ['ngRoute']);
-app.config(['$routeProvider', function($routeProvider){
+var app = angular.module('CoCaApp', ['ngRoute', 'ngAnimate', 'dataServices', 'data'])
+	.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/', {
 			templateUrl: 'components/home-view.html',
 			controller: 'HomeCtrl',
@@ -10,7 +10,7 @@ app.config(['$routeProvider', function($routeProvider){
 			controller: 'CountriesCtrl',
 			controllerAs: 'co'
 		})
-		.when('/details', {
+		.when('/countries/:countryCode', {
 			templateUrl: 'components/details-view.html',
 			controller: 'DetailsCtrl',
 			controllerAs: 'det'
@@ -21,7 +21,7 @@ app.config(['$routeProvider', function($routeProvider){
 		.otherwise({ //persitant 
 			redirectTo: '/error'
 		});
-}]);
+	}]);
 		// only on reload .run() will be executed. 1 time
 // app.run(['$rootScope', '$location', function($rootScope, $location){
 // 	$rootScope.$on('$rootScope', function(){
@@ -29,14 +29,6 @@ app.config(['$routeProvider', function($routeProvider){
 // 	});
 // }]);
 
-app.controller('HomeCtrl', [function(){
 
-}]);
 
-app.controller('CountriesCtrl', [function(){
-	
-}]);
 
-app.controller('DetailsCtrl', [function(){
-	
-}]);

@@ -1,13 +1,13 @@
 /* Factory Purpose: Make API Calls to geonames */
-
 angular.module('dataServices', [])
-	.factory('geonamesFactory', ['$http', '$q', '$route', function($http, $q, $route){
+	.factory('apiRequestFactory', ['$http', '$q', '$route', function($http, $q, $route){
 
 		var username = 'yolixtly';
-		var urlBase = 'http://api.geonames.org';
+		var urlBase = 'http://api.geonames.org/';
 
 		return {
-
+			//Result : Country information :
+			//Capital, Population, Area in square km, Bounding Box of mainland 
 			getCountries : function(){
 				//use $q service when performing multiple Requests.
 				var defer = $q.defer();
@@ -25,21 +25,23 @@ angular.module('dataServices', [])
 					//list should only be gotten from the server once, then:
 					cache : true
 				})
-				.then(function(data, status, headers, config){
-					if(typeof data.status == 'object'){
-						console.log('Error: ' + data.status.message);
-						defer.reject();
-					} else {
-						defer.resolve(data);
-					}
+				.success(function(data, status, headers, config){
+					if(typeof data.status == 'object') {
+				         console.log("Error'" + data.status.message + "'");
+				         defer.reject(data.status);
+       				 } else {
+          				 defer.resolve(data);
+        			 }
 				})
-				.then(function(data, status, headers, config){
+				.error(function(data, status, headers, config){
 					console.log(status + ' fail to access geonames.org.');
 					defer.reject();
 				});
 				return defer.promise;
 			},
-
+			
+			// To obtain the Country name pass the 2 digit Country Code 
+			// it must be uppercase like: MX
 			getCountry : function(countryCode){
 				var defer = $q.defer();
 				var url = urlBase + 'countryInfoJSON';
@@ -64,7 +66,7 @@ angular.module('dataServices', [])
 				});
 				return defer.promise;
 			},
-
+			//Result : returns the neighbours of a toponym.
 			getNeighbors : function(countryCode){
 				var defer = $q.defer();
 				var url = urlBase + 'neighboursJSON';
@@ -91,6 +93,8 @@ angular.module('dataServices', [])
 				return defer.promise;
 			},
 
+			//this will return the capital given the Country Code 
+			//by endpoint  searchJSON
 			getCapitals : function(countryCode){
 				var defer = $q.defer();
 				var url = urlBase + 'searchJSON';
