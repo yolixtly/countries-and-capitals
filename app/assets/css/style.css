@@ -12,6 +12,153 @@ body {
   margin: 0;
   padding: 0.5em;
 }
+/* Styles for countries-view.html */
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper #searchCountry {
+  margin: 2em;
+  padding: 1em;
+  width: 20em;
+  text-align: center;
+  border: 0.5em solid #ec9614;
+  border-radius: 15%;
+  background: #f0f0f0;
+  outline: none;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+.wrapper table tr th {
+  text-align: center;
+  padding: 1em;
+}
+.wrapper .btn-wrapper {
+  margin: 2em;
+}
+.wrapper .btn-wrapper .custom-btn {
+  outline: none;
+  text-decoration: none;
+  border: 0.3em solid #ec9614;
+  border-radius: 15%;
+  padding: 0.5em;
+  letter-spacing: 0.1em;
+  color: black;
+  transition: all 0.5s ease-in;
+}
+.wrapper .btn-wrapper .custom-btn:hover {
+  background-color: #ec9614;
+}
+/* Styles for home-view.html */
+.home-wrapper {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em;
+}
+.home-wrapper img {
+  width: 20em;
+}
+.home-wrapper .welcome {
+  margin: 2em 0 2em 0;
+}
+.home-wrapper .welcome h1 {
+  font-size: 3em;
+  color: red;
+}
+.home-wrapper .paragraph {
+  font-size: 1.5em;
+}
+.home-wrapper .paragraph span {
+  color: #ec9614;
+}
+/* Styles for details-view.html */
+.details-wrapper {
+  margin-top: 2em;
+}
+.details {
+  text-align: center;
+}
+.details h1 {
+  color: red;
+  font-size: 3em;
+  font-weight: 700;
+}
+.details hr {
+  width: 80%;
+  border: none;
+  background: #ec9614;
+  height: 0.3em;
+}
+.details h5 {
+  text-align: justify;
+  margin-left: 2em;
+  font-weight: 550;
+  color: black;
+}
+.details ul {
+  text-decoration: none;
+  list-style: none;
+}
+.details ul li {
+  margin: 0.5em;
+  display: inline;
+  padding: 0.3em;
+  border: 0.3em solid #ec9614;
+  background: #ec9614;
+}
+.details ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 1s;
+}
+.details ul li a:hover {
+  color: black;
+}
+.box {
+  margin: 0 auto;
+  text-align: center;
+}
+.box .country-img {
+  width: 15em;
+}
+/* button style */
+.main-btn {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  outline: none;
+  text-decoration: none !important;
+  border: 0.3em solid #ec9614;
+  border-radius: 15%;
+  padding: 0.5em;
+  letter-spacing: 0.1em;
+  color: black;
+  transition: all 0.5s ease-in;
+}
+.main-btn:hover {
+  background-color: #ec9614;
+  color: black;
+}
+/* Error pages Style */
+.error {
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+  font-size: 1em;
+  color: #7e4a23;
+  position: absolute;
+}
+.error-img {
+  z-index: 20;
+  margin-top: 3em;
+  margin: 0 auto;
+  text-align: center;
+}
+.error-img img {
+  width: 100vw;
+}
 /* MediaQueries */
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -19,10 +166,25 @@ body {
   .index-title {
     font-size: 3em;
   }
+  .home-wrapper {
+    margin-top: 10em;
+  }
+  .details-wrapper {
+    margin-top: 5em;
+  }
+  .details h5 {
+    margin-left: 5em;
+  }
+  .error {
+    font-size: 3em;
+  }
 }
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (min-width: 550px) and (max-width: 959px) {
   .index-title {
     font-size: 2.5em;
+  }
+  .details-wrapper {
+    margin-top: 5em;
   }
 }

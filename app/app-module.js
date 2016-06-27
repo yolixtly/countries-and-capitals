@@ -1,4 +1,5 @@
-var app = angular.module('CoCaApp', ['ngRoute']).config(['$routeProvider', function($routeProvider){
+var app = angular.module('CoCaApp', ['ngRoute']);
+app.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/', {
 			templateUrl: 'components/home-view.html',
 			controller: 'HomeCtrl',
@@ -9,24 +10,24 @@ var app = angular.module('CoCaApp', ['ngRoute']).config(['$routeProvider', funct
 			controller: 'CountriesCtrl',
 			controllerAs: 'co'
 		})
-		.when('/countries/:countryCode', {
+		.when('/details', {
 			templateUrl: 'components/details-view.html',
 			controller: 'DetailsCtrl',
 			controllerAs: 'det'
 		})
 		.when('/error', {
-			template: '<p class="error"> Error - Page Not Found </p>'
+			templateUrl: 'components/error-view.html'
 		})
 		.otherwise({ //persitant 
 			redirectTo: '/error'
 		});
 }]);
-		// 	// only on reload . 1 time
-		// app.run(['$rootScope', '$location', function($rootScope, $location){
-		// 	$rootScope.$on('$rootScope', function(){
-		// 		$location.path('/error');
-		//  	});
-		// }]);
+		// only on reload .run() will be executed. 1 time
+// app.run(['$rootScope', '$location', function($rootScope, $location){
+// 	$rootScope.$on('$rootScope', function(){
+// 			$location.path('/error');
+// 	});
+// }]);
 
 app.controller('HomeCtrl', [function(){
 
