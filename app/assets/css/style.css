@@ -30,9 +30,43 @@ body {
   font-weight: 500;
   letter-spacing: 0.1em;
 }
-.wrapper table tr th {
+.wrapper table {
+  text-align: left;
+}
+.wrapper table .titleTable {
   text-align: center;
+  font-size: 1.5em;
+  background-color: #ec9614;
+  border-top-right-radius: 1em;
+  border-top-left-radius: 1em;
+  border-bottom: solid #ec9614;
+}
+.wrapper table thead {
+  background-color: #ec9614;
+  position: static;
+}
+.wrapper table tr .tableField {
   padding: 1em;
+  transition: all 0.3s;
+  width: 17.82%;
+}
+.wrapper table tr .tableField:hover {
+  color: red;
+}
+.wrapper table tr td {
+  color: dimgray;
+  width: 20%;
+  padding: 0.3em;
+}
+.wrapper table tr td.firstRow:hover {
+  color: #ec9614;
+  cursor: pointer;
+}
+.wrapper #contentTable {
+  height: 40vh;
+  overflow-y: scroll;
+  margin-top: -1.3em;
+  border: 0.2em solid #ec9614;
 }
 .wrapper .btn-wrapper {
   margin: 2em;
@@ -186,5 +220,8 @@ body {
   }
   .details-wrapper {
     margin-top: 5em;
+  }
+  #contentTable {
+    overflow-x: scroll;
   }
 }

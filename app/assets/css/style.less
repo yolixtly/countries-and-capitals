@@ -37,12 +37,50 @@ body {
 		letter-spacing: 0.1em;
 	}
 	table {
+		text-align: left;		
+		.titleTable {
+			text-align: center;
+			font-size: 1.5em;
+			background-color: @color1;
+			border-top-right-radius: 1em;
+    		border-top-left-radius: 1em;
+    		border-bottom: solid @color1;
+		}
+		thead {
+			background-color: @color1;
+			position: static;
+		}
 		tr {
-			th {
-				text-align: center;
+			.tableField {
 				padding: 1em;
+				transition: all 0.3s;
+				width: 17.82%;
+				&:hover{
+					color: red;
+				}
+			}
+		td {
+				color: dimgray;
+				//width applied to fix the width of the content. 
+				//It will shrink to the left if if set to 17.82% like <th> tag above
+				width: 20%;
+				padding: 0.3em;
+			}
+		td.firstRow {
+			&:hover {
+				color: @color1;
+				cursor: pointer;
 			}
 		}
+		
+		}
+	}
+	#contentTable {
+		height: 40vh;
+		overflow-y: scroll;
+		margin-top: -1.3em;
+
+		border: 0.2em solid @color1;
 	}
 	.btn-wrapper {
 		margin: 2em;
@@ -212,5 +250,8 @@ body {
 	}
 	.details-wrapper{
 		margin-top: 5em;
+	}
+	#contentTable {
+		overflow-x: scroll;
 	}
 }
