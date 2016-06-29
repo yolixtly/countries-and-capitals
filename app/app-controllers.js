@@ -1,7 +1,7 @@
 var app = angular.module('CoCaApp');
 
-app.controller('HomeCtrl', [function(){
-
+app.controller('HomeCtrl', ['$scope', function($scope){
+  $scope.welcome = 'Welcome!';
 }]);
 
 app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', function($scope, $location, $filter, countryData, $q){

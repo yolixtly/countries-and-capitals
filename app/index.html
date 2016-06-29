@@ -12,8 +12,10 @@
 </head>
 <body>
 <h1 class="index-title">Countries and Capitals</h1>
+<!-- View transition loading -->
+<div id="loading-container" ng-class="{loading: isLoading}"></div>
 <!-- Views Section starts -->
-<div ng-view></div>
+<div class="view-trans" ng-view></div>
 <!-- Views Section ends -->
 <!-- Scripts Section starts -->
  <!-- <script src="https://code.jquery.com/jquery-1.11.3.js"></script> -->

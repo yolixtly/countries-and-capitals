@@ -20,13 +20,25 @@ var app = angular.module('CoCaApp', ['ngRoute', 'ngAnimate', 'dataServices', 'da
 		.otherwise({ //persitant 
 			redirectTo: '/error'
 		});
-	}]);
-		// only on reload .run() will be executed. 1 time
-// app.run(['$rootScope', '$location', function($rootScope, $location){
-// 	$rootScope.$on('$rootScope', function(){
-// 			$location.path('/error');
-// 	});
-// }]);
+	}]).run(['$rootScope', '$location', '$timeout', '$log', 
+		function($rootScope, $location, $timeout, $log){
+			//Broadcasted if a redirection function fails 
+			//or any redirection or resolve promises are rejected
+			$rootScope.$on('$routeChangeError', function(){
+					$location.path('/error');
+			});
+			//for animation purposes, we set the following:
+			//everytime we change view, a loading image will be displayed 
+			$rootScope.$on('$routeChangeStart', function(){
+					$rootScope.isLoading = true;
+			});
+			$rootScope.$on('$routeChangeSuccess', function(){
+				$timeout(function(){
+					$rootScope.isLoading = false;
+					$log.info($rootScope.isLoading, 'Change view in 1 second');
+				}, 500);
+			});
+}]);
 
 
 
