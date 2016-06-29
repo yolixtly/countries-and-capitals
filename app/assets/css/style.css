@@ -32,6 +32,8 @@ body {
 }
 .wrapper table {
   text-align: left;
+  width: 100%;
+  table-layout: fixed;
 }
 .wrapper table .titleTable {
   text-align: center;
@@ -46,27 +48,35 @@ body {
   position: static;
 }
 .wrapper table tr .tableField {
-  padding: 1em;
+  padding: 0;
   transition: all 0.3s;
-  width: 17.82%;
+  width: 17%;
 }
 .wrapper table tr .tableField:hover {
   color: red;
 }
-.wrapper table tr td {
+.wrapper table tr #tr-content {
   color: dimgray;
-  width: 20%;
-  padding: 0.3em;
+}
+.wrapper table tr td.firstRow {
+  text-decoration: none;
 }
 .wrapper table tr td.firstRow:hover {
   color: #ec9614;
   cursor: pointer;
 }
+.wrapper table tr td {
+  width: 17%;
+}
 .wrapper #contentTable {
   height: 40vh;
   overflow-y: scroll;
   margin-top: -1.3em;
+}
+.wrapper #contentTable tbody {
   border: 0.2em solid #ec9614;
+  border-top: none;
+  border-bottom: none;
 }
 .wrapper .btn-wrapper {
   margin: 2em;
@@ -112,6 +122,25 @@ body {
 .details-wrapper {
   margin-top: 2em;
 }
+.details-wrapper #btn-wrapper-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.details-wrapper #btn-wrapper-details h6 {
+  text-align: center;
+  margin: 1em;
+}
+.details-wrapper .flag {
+  width: 80%;
+}
+.details-wrapper .map {
+  max-height: 30em;
+  width: 80%;
+}
+.border {
+  margin: 0 auto;
+}
 .details {
   text-align: center;
 }
@@ -121,7 +150,7 @@ body {
   font-weight: 700;
 }
 .details hr {
-  width: 80%;
+  width: 90%;
   border: none;
   background: #ec9614;
   height: 0.3em;
@@ -132,13 +161,21 @@ body {
   font-weight: 550;
   color: black;
 }
+.details .neighbors {
+  overflow-y: auto;
+  max-height: 10em;
+  margin-bottom: 0.5em;
+  padding: 1em;
+  border-top: 0.3em solid #ec9614;
+  border-bottom: 0.3em solid #ec9614;
+}
 .details ul {
   text-decoration: none;
   list-style: none;
 }
 .details ul li {
-  margin: 0.5em;
-  display: inline;
+  width: 50%;
+  margin: auto;
   padding: 0.3em;
   border: 0.3em solid #ec9614;
   background: #ec9614;
@@ -164,6 +201,7 @@ body {
   margin-bottom: 2em;
   outline: none;
   text-decoration: none !important;
+  text-align: center;
   border: 0.3em solid #ec9614;
   border-radius: 15%;
   padding: 0.5em;
@@ -221,6 +259,8 @@ body {
   .details-wrapper {
     margin-top: 5em;
   }
+}
+@media (max-width: 550px) {
   #contentTable {
     overflow-x: scroll;
   }

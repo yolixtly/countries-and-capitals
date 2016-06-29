@@ -12,8 +12,7 @@ var app = angular.module('CoCaApp', ['ngRoute', 'ngAnimate', 'dataServices', 'da
 		})
 		.when('/countries/:countryCode', {
 			templateUrl: 'components/details-view.html',
-			controller: 'DetailsCtrl',
-			controllerAs: 'det'
+			controller: 'DetailsCtrl'
 		})
 		.when('/error', {
 			templateUrl: 'components/error-view.html'

@@ -20,7 +20,7 @@
               <span ng-show="co.selectedField ==='countryCode' && co.isReversed" class="arrow fa fa-chevron-up"></span>
             </th>
             <th class="tableField" ng-click="co.selectedField = 'capital'; co.isReversed = !co.isReversed">Capital
-              <span ng-show="co.selectedField ==='capital' && !co.isReversed" class="arrow fa fa-chevron-down"></span>
+            <span ng-show="co.selectedField ==='capital' && !co.isReversed" class="arrow fa fa-chevron-down"></span>
               <span ng-show="co.selectedField ==='capital' && co.isReversed" class="arrow fa fa-chevron-up"></span>
             </th>
             <th class="tableField" ng-click="co.selectedField = 'areaInSqKm'; co.isReversed = !co.isReversed">Area in km2
@@ -41,8 +41,8 @@
       <div id="contentTable">        
         <table class="table-striped table-hover responsive-table">
           <tbody>
-            <tr ng-repeat="country in co.countries | orderBy: co.selectedField:co.isReversed | filter:search.countryName">
-              <td class="firstRow">{{ country.countryName }}</td>
+            <tr id="tr-content" ng-repeat="country in co.countries | orderBy: co.selectedField:co.isReversed | filter:search.countryName" ng-click="co.showDetail(country)">
+             <a href="#/countries/{{ country.countryName }}"> <td  class="firstRow">{{ country.countryName }}</td></a>
               <td class="capitalRow">{{ country.countryCode }}</td>
               <td>{{ country.capital }}</td>
               <td>{{ country.areaInSqKm | number }}</td>

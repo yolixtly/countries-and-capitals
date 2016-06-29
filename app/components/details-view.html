@@ -1,29 +1,32 @@
 <div class="details-wrapper container">
 	<div class="row">
-		<div class="border box col-xs-12 col-sm-3">
-			<img class="country-img" src="./assets/images/flag.png" alt="test">
+		<div class="box col-xs-12 col-sm-3">
+			<img class="flag" src="http://www.geonames.org/flags/x/{{ flag }}.gif" />
 		</div>
 		<div class="border details col-xs-12 col-sm-6">
-			<h1>Mexico</h1>
+			<h1>{{ country.countryName }}</h1>
 			<hr>
-			<h5>Population of Country: </h5>
-			<h5>Area (km<sup>2</sup>):</h5>
-			<h5>Capital:</h5>
-			<h5>Population of Capital:</h5>
-			<h5>Continent:</h5>
-			<h5>Neighbors:</h5>
+			<h5>Population of Country:   {{ country.population | number }} </h5>
+			<h5>Area (km<sup>2</sup>):   {{ country.areaInSqKm | number }}</h5>
+			<h5>Capital:   {{ country.capital }}</h5>
+			<h5>Population of Capital:   {{ capitalPopulation | number }}</h5>
+			<h5>Continent:   {{ country.continent }} </h5>
+			<h5>{{ neighbors.length }} Neighbors:</h5>
 			<br>
-			<ul>
-				<li><a href="#">USA</a></li>
-				<li><a href="#">Guatemala</a></li>
-				<li><a href="#">Belize</a></li>
+			<div class="neighbors">
+				<ul ng-repeat="neighbor in neighbors">
+				<li><a href="#/countries/{{ neighbor.countryCode |  uppercase }}">{{ neighbor.countryName }}</a></li>
 			</ul>
-			<br>
-			<h6><a href="#/"  class="main-btn">Home</a></h6>	
-			<br>
+			</div>
 		</div>
-		<div class="border box col-xs-12 col-sm-3">
-			<img class="country-img" src="./assets/images/map.jpg" alt="test">
+		<div class="box col-xs-12 col-sm-3">
+			<img class="map" src="http://www.geonames.org/img/country/250/{{ map }}.png" />
 		</div>
 	</div>
+	<br>
+	<div id="btn-wrapper-details">
+		<h6><a href="#/"  class="main-btn">Home</a></h6>
+		<h6><a href="#/countries"  class="main-btn">Countries</a></h6>
+	</div>
+	<br>
 </div>

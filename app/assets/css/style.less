@@ -37,7 +37,9 @@ body {
 		letter-spacing: 0.1em;
 	}
 	table {
-		text-align: left;		
+		text-align: left;
+		width:100%;
+		table-layout: fixed;		
 		.titleTable {
 			text-align: center;
 			font-size: 1.5em;
@@ -52,25 +54,25 @@ body {
 		}
 		tr {
 			.tableField {
-				padding: 1em;
+				padding: 0;
 				transition: all 0.3s;
-				width: 17.82%;
+				width: 17%;
 				&:hover{
 					color: red;
 				}
 			}
-		td {
+		#tr-content {
 				color: dimgray;
-				//width applied to fix the width of the content. 
-				//It will shrink to the left if if set to 17.82% like <th> tag above
-				width: 20%;
-				padding: 0.3em;
 			}
 		td.firstRow {
+			text-decoration: none;
 			&:hover {
 				color: @color1;
 				cursor: pointer;
 			}
+		}
+		td {
+			width: 17%;
 		}
 		
 		}
@@ -79,8 +81,12 @@ body {
 		height: 40vh;
 		overflow-y: scroll;
 		margin-top: -1.3em;
-
-		border: 0.2em solid @color1;
+		// border: 0.2em solid @color1;
+		tbody {
+			border: 0.2em solid @color1;
+			border-top: none;
+			border-bottom: none;
+		}
 	}
 	.btn-wrapper {
 		margin: 2em;
@@ -126,10 +132,25 @@ body {
 /* Styles for details-view.html */
 .details-wrapper{
 	margin-top: 2em;
-
+	#btn-wrapper-details{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		h6 {
+				text-align: center;
+				margin: 1em;
+			}
+	}
+	.flag {
+		width: 80%;
+	}
+	.map {
+		max-height: 30em;
+		width: 80%;
+	}
 }
 .border {
-	// border: 3px solid;
+	margin: 0 auto;
 }
 .details {
 	text-align: center;
@@ -139,7 +160,7 @@ body {
 		font-weight: 700;
 	}
 	hr {
-		width: 80%;
+		width: 90%;
 		border: none;
 		background: @color1;
 		height: 0.3em;
@@ -150,12 +171,22 @@ body {
 		font-weight: 550;
 		color: black;
 	}
+	.neighbors {
+		overflow-y: auto;
+		max-height: 10em;
+		margin-bottom: 0.5em;
+		padding: 1em;
+		border-top: 0.3em solid @color1;
+		border-bottom: 0.3em solid @color1;
+	}
 	ul {
 		text-decoration: none;
 		list-style: none;
+
 		li {
-			margin: 0.5em;
-			display: inline;
+			// margin: 0.5em;
+			width: 50%;
+			margin: auto;
 			padding: 0.3em;
 			border: 0.3em solid @color1;
 			background: @color1;
@@ -184,6 +215,7 @@ body {
 		margin-bottom: 2em;
 		outline: none;
 		text-decoration: none !important;
+		text-align: center;
 		border: 0.3em solid @color1;
 		border-radius: 15%;
 		padding: 0.5em;
@@ -251,7 +283,10 @@ body {
 	.details-wrapper{
 		margin-top: 5em;
 	}
-	#contentTable {
+}
+
+@media (max-width: 550px) {
+		#contentTable {
 		overflow-x: scroll;
 	}
 }
