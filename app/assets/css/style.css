@@ -264,7 +264,7 @@ body {
   width: 100vw;
   z-index: 1000;
   background: #f0f0f0 no-repeat center center;
-  background-image: url('../images/hourglass.gif');
+  background-image: url('images/hourglass.gif');
 }
 /* Animations */
 .view-trans.ng-enter {

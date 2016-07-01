@@ -37,7 +37,7 @@ var paths = {
     default port is : 8080 */
 gulp.task('connect', ['watch', 'build'], function(){
   connect.server({
-    root: 'app',
+    root: 'build',
     livereload: true
   });
 });
@@ -55,6 +55,8 @@ gulp.task('watch', function(){
 gulp.task('copy', ['less', 'clean'], function(){
   gulp.src(paths.html)
     .pipe(gulp.dest(paths.build));
+  gulp.src('./app/assets/images/*.{png,gif,jpg}')
+    .pipe(gulp.dest('./build/assets/images'));
 });
 
 /* $ gulp clean // cleans the build file. */
