@@ -82,7 +82,7 @@ gulp.task('less', function() {
     then usemin will be trigger 
     usemin requires the metadata comments inside the index.html */
 gulp.task('usemin', ['copy'], function(){
-  gulp.src(paths.html)
+  gulp.src(paths.index)
     .pipe(usemin({
       css: [minifyCss()],
       js: [ ngmin(), uglify() ]
