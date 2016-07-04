@@ -3,7 +3,7 @@ angular.module('dataServices', [])
   .factory('apiRequestFactory', ['$http', '$q', '$route', function($http, $q, $route){
 
     var username = 'yolixtly';
-    var urlBase = '//api.geonames.org/';
+    var urlBase = 'http://api.geonames.org/';
 
     return {
       //Result : Country information :
