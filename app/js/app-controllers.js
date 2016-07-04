@@ -1,4 +1,4 @@
-var app = angular.module('CoCaApp');
+var app = angular.module('CoCaApp', []);
 
 app.controller('HomeCtrl', ['$scope', function($scope){
   $scope.welcome = 'Welcome!';

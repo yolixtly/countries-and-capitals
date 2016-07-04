@@ -1,0 +1,24 @@
+{
+  "name": "countries-and-capitals",
+  "description": "angular project using animations, promises and XHR Requests",
+  "directory": "./app",
+  "authors": [
+    "Yolixtly Anderson"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/yolixtly/countries-and-capitals",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "angular-mocks": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "bootstrap": "^3.3.6"
+  }
+}
