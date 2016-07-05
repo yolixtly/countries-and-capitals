@@ -1,6 +1,6 @@
 //the next factory, takes all the return data from apiRequestFactory and make
 //it available for all the application: 
-angular.module('data', [])
+angular.module('data', ['dataServices'])
 	.factory('countryData', ['apiRequestFactory', function(apiRequestFactory){
 
 		var countryData = {};

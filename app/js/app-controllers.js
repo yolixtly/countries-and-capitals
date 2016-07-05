@@ -1,10 +1,11 @@
-var app = angular.module('CoCaApp', []);
+var app = angular.module('CoCaApp');
 
 app.controller('HomeCtrl', ['$scope', function($scope){
   $scope.welcome = 'Welcome!';
 }]);
 
-app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', function($scope, $location, $filter, countryData, $q){
+app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', 
+  function($scope, $location, $filter, countryData, $q){
 //for the current execution Context. Where binding cannot take the window object 
 'use strict';
 
