@@ -22,6 +22,7 @@ app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData'
     //used to populate the table in countries-view.html
     //contains an array of objects, where each object is a country
     vm.countries = countryData.countries;
+    console.log(vm.countries);
   });
 
     //Variables to organize the list by field
