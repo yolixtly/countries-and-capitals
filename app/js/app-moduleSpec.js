@@ -13,22 +13,27 @@ describe("routesSpec", function() {
 
                 $httpBackend.flush();
 
-                expect($route.current.controller).toBe("HomeCtrl");
-                expect($route.current.loadedTemplateUrl).toBe("components/home-view.html");
+                expect($route.current.controller).toBe('HomeCtrl');
+                expect($route.current.loadedTemplateUrl).toBe('components/home-view.html');
 
                 $httpBackend.verifyNoOutstandingRequest();
                 $httpBackend.verifyNoOutstandingExpectation();
             }));
     });
 
-    describe("/countries route", function() {
-        it('should load countries template/controller',
+    //Spec for Countries Route
+      describe('/countries route', function() {
+        it('should load the Countries template (The table) and controller',
             inject(function($location, $rootScope, $httpBackend, $route) {
+
+              //assertions
                 $httpBackend.whenGET('components/countries-view.html').respond('...');
                 $httpBackend.expectGET('components/countries-view.html').respond(200);
 
                 $rootScope.$apply(function() {
+
                     $location.path('/countries');
+
                 });
 
                 $httpBackend.flush();
@@ -74,6 +79,7 @@ describe("routesSpec", function() {
                 $httpBackend.flush();
 
                 expect($route.current.loadedTemplateUrl).toBe("components/error-view.html");
+
 
                 $httpBackend.verifyNoOutstandingRequest();
                 $httpBackend.verifyNoOutstandingExpectation();
