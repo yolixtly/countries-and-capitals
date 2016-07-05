@@ -1,4 +1,4 @@
-var app = angular.module('CoCaApp', ['ngRoute', 'ngAnimate', 'dataServices', 'data'])
+angular.module('CoCaApp', ['ngRoute', 'ngAnimate', 'dataServices', 'data'])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/', {
 			templateUrl: 'components/home-view.html',

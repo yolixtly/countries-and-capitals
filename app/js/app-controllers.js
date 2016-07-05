@@ -4,7 +4,8 @@ app.controller('HomeCtrl', ['$scope', function($scope){
   $scope.welcome = 'Welcome!';
 }]);
 
-app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', function($scope, $location, $filter, countryData, $q){
+app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', 
+  function($scope, $location, $filter, countryData, $q){
 //for the current execution Context. Where binding cannot take the window object 
 'use strict';
 
@@ -22,6 +23,7 @@ app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData'
     //used to populate the table in countries-view.html
     //contains an array of objects, where each object is a country
     vm.countries = countryData.countries;
+    console.log(vm.countries);
   });
 
     //Variables to organize the list by field
