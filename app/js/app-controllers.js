@@ -23,7 +23,6 @@ app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData'
     //used to populate the table in countries-view.html
     //contains an array of objects, where each object is a country
     vm.countries = countryData.countries;
-    console.log(vm.countries);
   });
 
     //Variables to organize the list by field
@@ -56,7 +55,7 @@ app.controller('DetailsCtrl', ['$scope', '$route', 'countryData', function($scop
   countryData.getCapitals($route.current.params.countryCode).then(function(result){
     $scope.capital = result;
     $scope.capitalPopulation = $scope.capital.population;
-  });
+});
 
    //RETURNS : neighbors array
   countryData.getNeighbors($route.current.params.countryCode).then(function(result){
@@ -66,5 +65,4 @@ app.controller('DetailsCtrl', ['$scope', '$route', 'countryData', function($scop
    //IMAGES code: 
     $scope.flag = $route.current.params.countryCode.toLowerCase();
     $scope.map = $route.current.params.countryCode;
-
 }]);
