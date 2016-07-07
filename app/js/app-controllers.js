@@ -4,7 +4,8 @@ app.controller('HomeCtrl', ['$scope', function($scope){
   $scope.welcome = 'Welcome!';
 }]);
 
-app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', function($scope, $location, $filter, countryData, $q){
+app.controller('CountriesCtrl', ['$scope', '$location', '$filter', 'countryData', '$q', 
+  function($scope, $location, $filter, countryData, $q){
 //for the current execution Context. Where binding cannot take the window object 
 'use strict';
 
@@ -54,7 +55,7 @@ app.controller('DetailsCtrl', ['$scope', '$route', 'countryData', function($scop
   countryData.getCapitals($route.current.params.countryCode).then(function(result){
     $scope.capital = result;
     $scope.capitalPopulation = $scope.capital.population;
-  });
+});
 
    //RETURNS : neighbors array
   countryData.getNeighbors($route.current.params.countryCode).then(function(result){
@@ -64,5 +65,4 @@ app.controller('DetailsCtrl', ['$scope', '$route', 'countryData', function($scop
    //IMAGES code: 
     $scope.flag = $route.current.params.countryCode.toLowerCase();
     $scope.map = $route.current.params.countryCode;
-
 }]);

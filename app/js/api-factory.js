@@ -37,6 +37,7 @@ angular.module('dataServices', [])
           console.log(status + ' fail to access geonames.org.');
           defer.reject();
         });
+        console.log(defer.promise);
         return defer.promise;
       },
 
