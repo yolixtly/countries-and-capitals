@@ -1,7 +1,7 @@
 # countries-and-capitals
 Angular animations, promises and XHR Requests
 
-yolixtly.com/countries-and-capitals/build/#/
+<a href="http://yolixtly.com/countries-and-capitals/build/#/">http://yolixtly.com/countries-and-capitals/</a>
 
 This App has been my most challenging yet! It took me over a week to finish it, but it was a well spent week, where I was introduced to new tools such as the <strong> task runner Gulp </strong> also for the first time I applied <strong> a unit Testing </strong> 
 
